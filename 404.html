@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#BE2A28" />
+<title>Página no encontrada · Ventuccio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{--rojo:#BE2A28;--verde:#1E6E43;--oro-txt:#8A6A20;--gris:#2A2622;--gris-cl:#5c534b;--crema:#FBF5EA;
+  --tri:linear-gradient(90deg,var(--verde) 0 33.34%,#fff 33.34% 66.67%,var(--rojo) 66.67% 100%);
+  --serif:'Playfair Display',Georgia,serif;--sans:'Montserrat',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);color:var(--gris);background:var(--crema);min-height:100dvh;
+  display:grid;place-items:center;text-align:center;padding:2rem 1.4rem;line-height:1.7}
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:4px;background:var(--tri)}
+.logo{font-family:var(--serif);font-weight:700;font-size:2.2rem;position:relative;display:inline-block;padding-bottom:9px;margin-bottom:2.5rem}
+.logo span{color:var(--oro-txt)}
+.logo::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:46px;height:3px;border-radius:2px;background:var(--tri)}
+.code{font-family:var(--serif);font-size:clamp(4rem,14vw,7rem);line-height:1;color:var(--rojo);letter-spacing:-.03em}
+h1{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.1rem);margin:.6rem 0 .7rem;letter-spacing:-.015em}
+p{color:var(--gris-cl);max-width:44ch;margin:0 auto 2rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--rojo);color:#fff;font-weight:600;
+  padding:.95rem 2rem;border-radius:50px;min-height:44px;transition:background .2s ease,transform .2s ease;text-decoration:none}
+.btn:hover{background:#9a201f;transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--oro-txt);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+  <main>
+    <div class="logo">Ven<span>tuccio</span></div>
+    <div class="code">404</div>
+    <h1>Esta página no está en la carta</h1>
+    <p>La dirección que buscas no existe o ha cambiado de sitio. Volvamos al principio.</p>
+    <a class="btn" href="./">Ir al inicio</a>
+  </main>
+</body>
+</html>

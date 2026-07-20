@@ -1,0 +1,15 @@
+# Configuración local del entorno de desarrollo
+.claude/
+
+# Carpeta de trabajo previa (no forma parte de este sitio).
+# Contiene imágenes con licencia CC BY-NC-SA: NO son aptas para uso comercial.
+ventuccio/
+
+# Copia empaquetada para enviar por correo (se genera desde la raíz)
+ventuccio-demo/
+*.zip
+
+# Dependencias y sistema
+node_modules/
+Thumbs.db
+.DS_Store

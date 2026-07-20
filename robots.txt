@@ -1,0 +1,14 @@
+# Versión de demostración alojada en GitHub Pages.
+# Se bloquea el rastreo para que esta demo no compita en Google
+# con el sitio oficial ni se confunda con él.
+#
+# AL PASAR A PRODUCCIÓN en el dominio real, sustituye todo este
+# archivo por el bloque comentado de abajo.
+
+User-agent: *
+Disallow: /
+
+# --- PRODUCCIÓN (descomentar al publicar en restauranteventuccio.com) ---
+# User-agent: *
+# Allow: /
+# Sitemap: https://restauranteventuccio.com/sitemap.xml

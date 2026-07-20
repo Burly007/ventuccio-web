@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#BE2A28" />
+
+<!-- ⚠️⚠️  DEMO: impide que Google indexe esta versión de prueba.
+     ELIMINA ESTA LÍNEA al publicar en el dominio real (restauranteventuccio.com),
+     o la web NO aparecerá en Google. Ver README.md → "Pasar a producción".  ⚠️⚠️ -->
+<meta name="robots" content="noindex, nofollow" />
+
+<title>Ventuccio · Auténtica Cocina Italiana en Marbella y Jaén</title>
+<meta name="description" content="Restaurante italiano en Marbella y Jaén. Pastas artesanas al momento, pizzas al horno de piedra con masa natural y ambiente acogedor. Reserva tu mesa online. Opciones sin gluten y para celíacos." />
+<meta name="keywords" content="restaurante italiano Marbella, pizzería Marbella, pastas frescas, restaurante italiano Jaén, reserva online, sin gluten, horno de piedra" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant" />
+<meta property="og:title" content="Ventuccio · Auténtica Cocina Italiana" />
+<meta property="og:description" content="Pastas artesanas, pizzas al horno de piedra y ambiente acogedor en Marbella y Jaén." />
+<meta property="og:locale" content="es_ES" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<!-- LCP: la imagen del hero se descarga cuanto antes -->
+<link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=80" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+
+<!-- SEO: Schema.org Restaurante -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Restaurant","name":"Restaurante Ventuccio",
+  "servesCuisine":"Italiana","priceRange":"€€","acceptsReservations":"True",
+  "url":"https://restauranteventuccio.com","email":"menaventuccio@gmail.com",
+  "slogan":"Cantidad, calidad, precio y simpatía",
+  "address":[
+    {"@type":"PostalAddress","streetAddress":"Avd. Ricardo Soriano, 38 Edificio María, 1 · Plaza de Gómez Agüera","addressLocality":"Marbella","postalCode":"29601","addressRegion":"Málaga","addressCountry":"ES"},
+    {"@type":"PostalAddress","streetAddress":"Paseo de España, 39 – Local 6","addressLocality":"Jaén","postalCode":"23009","addressCountry":"ES"}
+  ],
+  "telephone":["+34951518943","+34953674538"],
+  "openingHours":"Mo-Su 13:00-16:00,20:00-24:00"
+}
+</script>
+</head>
+<body>
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
+
+<!-- ============ HEADER ============ -->
+<header id="site-header">
+  <nav class="nav" aria-label="Principal">
+    <a href="#inicio" class="logo">Ven<span>tuccio</span></a>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#reservas" class="destacado">Reservas</a></li>
+      <li><a href="#ubicaciones">Ubicaciones</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="tel:+34951518943" class="tel-link"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.36 1.79.7 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.27a2 2 0 0 1 2.11-.45c.84.34 1.73.57 2.63.7A2 2 0 0 1 22 16.92z"/></svg> 951 518 943</a>
+      <a href="#reservas" class="btn btn-primary">Reservar Ahora</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="overlay-mask" id="mask"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+  <button class="close" id="closeMenu" aria-label="Cerrar menú">×</button>
+  <a href="#inicio">Inicio</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#menu">Menú</a>
+  <a href="#reservas" class="destacado">Reservas</a>
+  <a href="#pensamos">Sin gluten & Vegetariano</a>
+  <a href="#ubicaciones">Ubicaciones</a>
+  <a href="#contacto">Contacto</a>
+  <a href="tel:+34951518943" class="btn btn-oro" style="margin-top:1rem">Llamar a Marbella</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <span class="kicker">Marbella · Jaén</span>
+    <h1>Auténtica Cocina <em>Italiana</em> en Marbella</h1>
+    <p class="sub">Pastas artesanas al momento, pizzas al horno de piedra y un ambiente acogedor. Cantidad, calidad, precio y simpatía.</p>
+    <div class="hero-ctas">
+      <a href="#reservas" class="btn btn-primary btn-lg">Reservar Mesa</a>
+      <a href="#menu" class="btn btn-ghost btn-lg">Ver Menú</a>
+    </div>
+    <div class="loc-switch" id="heroLoc" role="group" aria-label="Elegir ciudad">
+      <button class="active" data-city="Marbella">Marbella</button>
+      <button data-city="Jaén">Jaén</button>
+    </div>
+    <div class="open-status" id="openStatus" aria-live="polite"><span class="os-dot" aria-hidden="true"></span><span class="os-text">Comprobando horario…</span></div>
+  </div>
+  <a href="#nosotros" class="scroll-ind" aria-label="Bajar"><div class="mouse"></div><span>Descubre</span></a>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Horno de piedra · masa natural</div>
+    <div class="trust-item"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6z"/><path d="M6 17h12"/></svg> Pasta artesana al momento</div>
+    <div class="trust-item"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg> Sin gluten & celíacos</div>
+    <div class="trust-item"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Marbella · Jaén</div>
+  </div>
+</div>
+
+<!-- ============ NOSOTROS ============ -->
+<section class="section about" id="nosotros">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-photo reveal"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80" alt="Interior del restaurante Ventuccio, con mesas vestidas y luz cálida" width="900" height="675" loading="lazy" decoding="async"></div>
+      <div class="about-text reveal d2">
+        <span class="eyebrow">Sobre nosotros</span>
+        <h2>Permítenos <em>presentarnos</em></h2>
+        <p>Nuestra carta contiene deliciosos platos de comida italiana, con una variedad de pastas artesanas elaboradas al momento. También ofrecemos sabrosas pizzas finas y crujientes, cocinadas en horno de piedra y con masa natural, siempre combinadas con ingredientes frescos y naturales, típicos mediterráneos.</p>
+        <p>Ventuccio se ubica en el corazón de Marbella. Con su ambiente desenfadado, es el lugar ideal para una cena entre amigos, una reunión familiar o una velada romántica.</p>
+        <span class="about-lema">"Cantidad, calidad, precio y simpatía"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROPUESTA DE VALOR ============ -->
+<section class="section bg-beige" id="valor">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">La diferencia Ventuccio</span>
+      <h2>¿Por qué elegir <em>Ventuccio</em>?</h2>
+      <p>Más que un restaurante, una experiencia italiana auténtica.</p>
+    </div>
+    <div class="valor-grid">
+      <div class="valor-card reveal d1"><div class="valor-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6z"/><path d="M6 17h12"/></svg></div><h3>Pastas 100% Artesanas</h3><p>Elaboradas al momento con receta casera italiana.</p></div>
+      <div class="valor-card reveal d2"><div class="valor-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></div><h3>Ingredientes Frescos</h3><p>Productos naturales y mediterráneos, seleccionados a mano.</p></div>
+      <div class="valor-card reveal d3"><div class="valor-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div><h3>Horno de Piedra</h3><p>Pizzas finas y crujientes con masa natural.</p></div>
+      <div class="valor-card reveal d4"><div class="valor-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg></div><h3>Mejor Relación P/C</h3><p>Cantidad, calidad, precio y simpatía.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESERVAS ============ -->
+<section class="section reservas" id="reservas">
+  <div class="res-wrap">
+    <div class="res-intro reveal">
+      <span class="eyebrow">Reserva Online</span>
+      <h2>Reserva Tu <em>Mesa</em> Hoy</h2>
+      <p>Aseguramos tu sitio en apenas un minuto. Sólo se considera confirmada tu reserva con nuestra llamada de teléfono, en menos de 1 hora.</p>
+      <ul class="res-perks">
+        <li><span class="tick"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Confirmación en menos de 1 hora</li>
+        <li><span class="tick"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Sin coste ni compromiso</li>
+        <li><span class="tick"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Pastas sin gluten y cerveza para celíacos</li>
+      </ul>
+      <div class="res-phones">
+        <a href="tel:+34951518943"><span class="ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.36 1.79.7 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.27a2 2 0 0 1 2.11-.45c.84.34 1.73.57 2.63.7A2 2 0 0 1 22 16.92z"/></svg></span><span><small>Marbella</small>951 518 943</span></a>
+        <a href="tel:+34953674538"><span class="ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.36 1.79.7 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.27a2 2 0 0 1 2.11-.45c.84.34 1.73.57 2.63.7A2 2 0 0 1 22 16.92z"/></svg></span><span><small>Jaén</small>953 674 538</span></a>
+      </div>
+    </div>
+
+    <div class="res-card reveal d2">
+      <form id="resForm" novalidate>
+        <h3>Solicita tu reserva</h3>
+        <p class="card-sub">Rellena los datos y te confirmamos enseguida.</p>
+        <div class="loc-tabs" id="locTabs" role="group" aria-label="Restaurante">
+          <button type="button" class="active" data-city="Marbella">Marbella<small>951 518 943</small></button>
+          <button type="button" data-city="Jaén">Jaén<small>953 674 538</small></button>
+        </div>
+        <input type="hidden" name="ubicacion" id="ubicacion" value="Marbella" />
+        <div class="form-grid">
+          <div class="field"><label for="fecha">Fecha</label><input type="date" id="fecha" name="fecha" required /><span class="err">Elige una fecha</span></div>
+          <div class="field"><label for="hora">Hora</label>
+            <select id="hora" name="hora" required>
+              <option value="">Selecciona…</option>
+              <optgroup label="Comida"><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option></optgroup>
+              <optgroup label="Cena"><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option><option>22:00</option><option>22:30</option></optgroup>
+            </select><span class="err">Elige una hora</span></div>
+          <div class="field"><label for="comensales">Comensales</label>
+            <select id="comensales" name="comensales" required>
+              <option value="">Nº personas…</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>Más de 10</option>
+            </select><span class="err">Indica cuántos sois</span></div>
+          <div class="field"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required /><span class="err">Dinos tu nombre</span></div>
+          <div class="field"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" placeholder="600 000 000" required /><span class="err">Teléfono no válido</span></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="tu@email.com" required /><span class="err">Email no válido</span></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Solicitar Reserva</button>
+        <p class="form-note">Tus datos están seguros · Respuesta en menos de 1 hora</p>
+      </form>
+      <div class="form-success" id="resSuccess" role="status">
+        <div class="big"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true" style="width:32px;height:32px;stroke:#fff;stroke-width:3"><path d="M20 6 9 17l-5-5"/></svg></div><h3>¡Solicitud recibida!</h3>
+        <p id="successMsg">Te confirmamos tu mesa por teléfono en menos de 1 hora. ¡Grazie!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESPECIALIDADES ============ -->
+<section class="section" id="especialidades">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nuestras estrellas</span>
+      <h2>Nuestras <em>Especialidades</em></h2>
+      <p>Platos reales de nuestra carta, con sus precios. Raciones abundantes, como dicen nuestros clientes.</p>
+    </div>
+    <div class="dish-grid" id="dishGrid"><!-- inyectado por JS --></div>
+    <div class="menu-cta reveal"><a href="#menu" class="btn btn-outline btn-lg">Ver Menú Completo</a></div>
+  </div>
+</section>
+
+<!-- ============ MENÚ INTERACTIVO ============ -->
+<section class="section bg-beige" id="menu">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Carta completa</span>
+      <h2>Nuestro <em>Menú</em></h2>
+      <p>Explora nuestras categorías sin abrumarte.</p>
+    </div>
+    <div class="menu-tabs reveal" id="menuTabs" role="tablist" aria-label="Categorías del menú"><!-- inyectado por JS --></div>
+    <div id="menuPanels"><!-- inyectado por JS --></div>
+    <div class="menu-cta reveal"><a href="#" class="btn btn-primary" id="pdfBtn">Descargar Menú en PDF</a></div>
+  </div>
+</section>
+
+<!-- ============ PENSAMOS EN TOD@S (Sin gluten + Vegetariano) ============ -->
+<section class="section gluten" id="pensamos">
+  <div class="container">
+    <div class="gluten-wrap">
+      <div class="reveal">
+        <div class="gluten-badge"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true" style="width:52px;height:52px;stroke:#fff;stroke-width:1.6"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></div>
+        <div class="gluten-text">
+          <h2>Pensamos en <em>Tod@s</em></h2>
+          <p>También tenemos presentes en nuestra carta a quienes no pueden comer gluten: contamos con <strong>pastas especiales sin gluten</strong> y, para acompañarlas, <strong>cerveza para celíacos</strong>. Y para quienes no comen carne ni pescado, muchos de nuestros platos son 100% vegetarianos.</p>
+          <p style="font-size:.92rem"><strong>Alergias e intolerancias:</strong> indícanoslo al reservar o al llegar y te informaremos de los ingredientes de cada plato.</p>
+          <a href="#reservas" class="btn btn-outline">Reservar mesa</a>
+        </div>
+      </div>
+      <ul class="gluten-list reveal d2">
+        <li class="gl-highlight"><span class="gl-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 22 16 8M3 2l7 7M14 6l4 4M9 11l4 4"/><circle cx="17" cy="17" r="4"/></svg></span><div><h3>Sin gluten & celíacos</h3><span>Pastas especiales sin gluten + cerveza para celíacos.</span></div></li>
+        <li><span class="gl-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/></svg></span><div><h3>Pizza & Pasta Vegetal</h3><span>Verduras a la parrilla, pesto y más. Desde 10,30 €</span></div></li>
+        <li><span class="gl-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21h10M12 21V9M5 9h14l-1-5H6L5 9z"/></svg></span><div><h3>Ensaladas Ventuccio y Módena</h3><span>Frescas y con producto de calidad. Desde 9,00 €</span></div></li>
+        <li><span class="gl-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/></svg></span><div><h3>Canelones de Espinacas</h3><span>Gratinados al horno. 11,90 €</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section class="section" id="testimonios">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Prueba social</span>
+      <h2>Qué Dicen Nuestros <em>Clientes</em></h2>
+      <p>Reseñas reales de nuestros clientes en Google.</p>
+    </div>
+    <div class="testi-track" id="testiTrack"><!-- inyectado por JS --></div>
+    <div class="testi-nav">
+      <button id="testiPrev" aria-label="Reseña anterior">‹</button>
+      <button id="testiNext" aria-label="Reseña siguiente">›</button>
+    </div>
+    <div class="menu-cta reveal" style="margin-top:1.6rem">
+      <a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Ventuccio+Marbella" target="_blank" rel="noopener" class="btn btn-outline">Ver todas las reseñas en Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECCIONES ESPECIALES ============ -->
+<section class="section bg-beige" id="especiales">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Más allá de la mesa</span>
+      <h2>Servicios <em>Especiales</em></h2>
+      <p>Hacemos memorable cualquier ocasión.</p>
+    </div>
+    <div class="accordion" id="accordion">
+      <div class="acc-item open">
+        <button class="acc-head" aria-expanded="true"><span class="acc-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.8 11.3 2 22l10.7-3.79M4 3h.01M22 8h.01M15 2h.01M22 20h.01M22 2l-2.24.75a3 3 0 0 0-1.95 1.96L17 7l1.5 1.5L21 7zM7 12l-1.5-1.5"/><circle cx="11" cy="11" r="2"/></svg></span><h3>Eventos Privados</h3><span class="acc-arrow">+</span></button>
+        <div class="acc-body"><div class="acc-inner">
+          <span class="acc-cap">Grupos grandes · Celebraciones</span>
+          <p>Cenas para grupos, cumpleaños y celebraciones con mesas reservadas. Consúltanos y preparamos tu velada.</p>
+          <a href="#contacto" class="btn btn-outline">Consultar disponibilidad</a>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false"><span class="acc-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4zM6 1v3M10 1v3M14 1v3"/></svg></span><h3>Grupos y Empresas</h3><span class="acc-arrow">+</span></button>
+        <div class="acc-body"><div class="acc-inner">
+          <span class="acc-cap">Comidas de empresa · Menús a medida</span>
+          <p>Menús especiales para grupos, comidas de trabajo y reuniones familiares. Raciones abundantes y buen precio.</p>
+          <a href="#contacto" class="btn btn-outline">Consultar disponibilidad</a>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false"><span class="acc-ico"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></span><h3>Para Llevar</h3><span class="acc-arrow">+</span></button>
+        <div class="acc-body"><div class="acc-inner">
+          <span class="acc-cap">Pídelo por teléfono</span>
+          <p>¿Prefieres disfrutar en casa? Llámanos y prepara tu pedido de pastas y pizzas para recoger.</p>
+          <a href="tel:+34951518943" class="btn btn-outline">Llamar para pedir</a>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UBICACIONES ============ -->
+<section class="section" id="ubicaciones">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Visítanos</span>
+      <h2>Dos <em>Ubicaciones</em> para ti</h2>
+      <p>Te esperamos en Marbella y Jaén.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card reveal d1">
+        <div class="loc-photo"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="Sala del restaurante Ventuccio en Marbella, con mesas preparadas y ambiente cálido" width="800" height="533" loading="lazy" decoding="async"><span class="badge">Marbella</span></div>
+        <div class="loc-info">
+          <div class="row"><span class="ri"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span>Avd. Ricardo Soriano, 38 · Edificio María, 1<br>Plaza de Gómez Agüera · 29601 Marbella, Málaga</span></div>
+          <div class="row"><span class="ri"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.36 1.79.7 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.27a2 2 0 0 1 2.11-.45c.84.34 1.73.57 2.63.7A2 2 0 0 1 22 16.92z"/></svg></span><a href="tel:+34951518943">951 518 943</a></div>
+          <div class="row"><span class="ri"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>Todos los días · 13:00–16:00 y 20:00–24:00</span></div>
+          <div class="loc-btns">
+            <a href="https://www.google.com/maps/search/?api=1&query=Ventuccio+Marbella" target="_blank" rel="noopener" class="btn btn-primary">Ver en Maps</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Avd.+Ricardo+Soriano+38+Marbella" target="_blank" rel="noopener" class="btn btn-outline">Cómo llegar</a>
+          </div>
+        </div>
+      </div>
+      <div class="loc-card reveal d2">
+        <div class="loc-photo"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80" alt="Interior del restaurante Ventuccio en Jaén, en el Paseo de España" width="800" height="533" loading="lazy" decoding="async"><span class="badge">Jaén</span></div>
+        <div class="loc-info">
+          <div class="row"><span class="ri"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span>Paseo de España, 39 – Local 6<br>23009 Jaén</span></div>
+          <div class="row"><span class="ri"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.36 1.79.7 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.27a2 2 0 0 1 2.11-.45c.84.34 1.73.57 2.63.7A2 2 0 0 1 22 16.92z"/></svg></span><a href="tel:+34953674538">953 674 538</a></div>
+          <div class="row"><span class="ri"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>Todos los días · 13:00–16:00 y 20:00–24:00</span></div>
+          <div class="loc-btns">
+            <a href="https://www.google.com/maps/search/?api=1&query=Ventuccio+Jaén" target="_blank" rel="noopener" class="btn btn-primary">Ver en Maps</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Paseo+de+España+39+Jaén" target="_blank" rel="noopener" class="btn btn-outline">Cómo llegar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <iframe class="map-embed reveal" title="Mapa de Ventuccio en Marbella" loading="lazy" src="https://www.google.com/maps?q=Avenida+Ricardo+Soriano+38+Marbella&output=embed"></iframe>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section contacto" id="contacto">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Hablemos</span>
+      <h2>¿Preguntas o Sugerencias?</h2>
+      <p>Nos encantaría saber de ti. Escríbenos a menaventuccio@gmail.com o rellena el formulario.</p>
+    </div>
+    <div class="cont-wrap reveal d1">
+      <form id="contForm" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="cNombre">Nombre *</label><input type="text" id="cNombre" placeholder="Tu nombre" required /><span class="err">Indica tu nombre</span></div>
+          <div class="field"><label for="cEmail">Email *</label><input type="email" id="cEmail" placeholder="tu@email.com" required /><span class="err">Email no válido</span></div>
+          <div class="field"><label for="cTel">Teléfono</label><input type="tel" id="cTel" placeholder="Opcional" /></div>
+          <div class="field"><label for="cAsunto">Asunto *</label><input type="text" id="cAsunto" placeholder="Motivo de tu consulta" required /><span class="err">Indica el asunto</span></div>
+          <div class="field full"><label for="cMsg">Mensaje *</label><textarea id="cMsg" rows="4" placeholder="Cuéntanos…" required></textarea><span class="err">Escribe tu mensaje</span></div>
+        </div>
+        <label class="check-row"><input type="checkbox" id="cPromo" /> Deseo recibir ofertas y promociones</label>
+        <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:1.3rem">Enviar mensaje</button>
+      </form>
+      <p class="news-ok" id="contOk" style="text-align:center;color:var(--oro)">✓ ¡Mensaje enviado! Te responderemos pronto.</p>
+      <div class="cont-social">
+        <a href="#" aria-label="Facebook"><svg class="icn icn-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg class="icn icn-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.6 3.5 3.5 3.7v2.5c-1.3.1-2.5-.3-3.5-1v6.3c0 3.2-2.6 5.5-5.6 5-2.5-.4-4.2-2.7-3.9-5.2.3-2.3 2.3-4 4.6-3.9v2.6c-.3-.1-.7-.1-1-.1-1 .1-1.7 1-1.6 2 .1.9.9 1.6 1.8 1.5.9-.1 1.6-.9 1.6-1.8V3h3.6z"/></svg></a>
+        <a href="https://wa.me/34951518943" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icn icn-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.06L2 22l5.05-1.32A10 10 0 1 0 12 2zm5.5 12.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter" id="newsletter">
+  <div class="reveal">
+    <h2>Recibe Ofertas Exclusivas</h2>
+    <p>Suscríbete y consigue un <strong>10% de descuento</strong> en tu primera reserva.</p>
+    <form class="news-form" id="newsForm" novalidate>
+      <label for="newsEmail" class="sr-only" style="position:absolute;left:-999px">Correo electrónico</label>
+      <input type="email" id="newsEmail" placeholder="Tu correo electrónico" required />
+      <button type="submit" class="btn btn-oro btn-lg">Suscribirse</button>
+    </form>
+    <p class="news-benefit">Sin spam. Cancela cuando quieras.</p>
+    <p class="news-ok" id="newsOk">✓ ¡Bienvenido a la famiglia! Revisa tu correo.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-logo">Ven<span>tuccio</span></div>
+        <p>Auténtica cocina italiana en Marbella y Jaén. Pastas artesanas, pizzas al horno de piedra y el sabor de Italia en cada plato.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Facebook"><svg class="icn icn-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg class="icn icn-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.6 3.5 3.5 3.7v2.5c-1.3.1-2.5-.3-3.5-1v6.3c0 3.2-2.6 5.5-5.6 5-2.5-.4-4.2-2.7-3.9-5.2.3-2.3 2.3-4 4.6-3.9v2.6c-.3-.1-.7-.1-1-.1-1 .1-1.7 1-1.6 2 .1.9.9 1.6 1.8 1.5.9-.1 1.6-.9 1.6-1.8V3h3.6z"/></svg></a>
+          <a href="https://wa.me/34951518943" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icn icn-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.06L2 22l5.05-1.32A10 10 0 1 0 12 2zm5.5 12.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#reservas">Reservas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#ubicaciones">Ubicaciones</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Contacto</h3>
+        <div class="frow"><strong>Marbella</strong><a href="tel:+34951518943">951 518 943</a></div>
+        <div class="frow"><strong>Jaén</strong><a href="tel:+34953674538">953 674 538</a></div>
+        <div class="frow"><strong>Email</strong><a href="mailto:menaventuccio@gmail.com">menaventuccio@gmail.com</a></div>
+        <div class="frow"><strong>Horario</strong>Todos los días · 13:00–16:00 · 20:00–24:00</div>
+      </div>
+      <div class="foot-col">
+        <h3>Síguenos</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="https://wa.me/34951518943" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2018–2026 Restaurante Ventuccio Marbella. Todos los derechos reservados.</span>
+      <div class="foot-legal">
+        <a href="#">Aviso Legal</a>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Política de Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Flotantes -->
+<a href="https://wa.me/34951518943" target="_blank" rel="noopener" class="fab fab-wa" aria-label="Contactar por WhatsApp"><svg class="icn icn-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.06L2 22l5.05-1.32A10 10 0 1 0 12 2zm5.5 12.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></a>
+<button class="fab fab-top" id="toTop" aria-label="Volver arriba"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<!-- Barra móvil -->
+<div class="mobile-bar">
+  <a href="tel:+34951518943" class="btn btn-outline" aria-label="Llamar a Marbella"><svg class="icn" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.36 1.79.7 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.27a2 2 0 0 1 2.11-.45c.84.34 1.73.57 2.63.7A2 2 0 0 1 22 16.92z"/></svg></a>
+  <a href="#reservas" class="btn btn-primary">Reservar Mesa</a>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
