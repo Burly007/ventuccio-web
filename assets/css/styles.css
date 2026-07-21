@@ -547,6 +547,23 @@ header.scrolled{border-bottom:2px solid transparent;border-image:var(--tricolore
    que todo respire y se lea, no que quepa.
    ========================================================= */
 
+/* ---------- CONTENCIÓN HORIZONTAL (todos los tamaños) ----------
+   El menú móvil está fixed y desplazado con translateX(100%), así que
+   quedaba fuera del viewport y la página se podía arrastrar hacia él,
+   dejando una franja blanca a la derecha. Se corrige por partida doble:
+   1) overflow-x en html Y en body (body solo no basta: html lo ignora)
+   2) el panel cerrado pasa a visibility:hidden, así no es alcanzable  */
+html{overflow-x:hidden}
+body{overflow-x:hidden;width:100%;max-width:100%;position:relative}
+
+/* visibility con retardo explícito: al abrir se muestra al instante;
+   al cerrar espera a que termine el deslizamiento antes de ocultarse. */
+.mobile-menu{visibility:hidden;transition:transform .35s ease,visibility 0s linear .35s}
+.mobile-menu.open{visibility:visible;transition:transform .35s ease,visibility 0s linear 0s}
+
+/* Los elementos fijos se anclan al viewport, no al área desbordada */
+.overlay-mask,.mobile-bar{max-width:100vw}
+
 /* ---------- TABLET (≤900px) ---------- */
 @media(max-width:900px){
   /* Los puntos suspensivos son un recurso tipográfico de escritorio.
@@ -570,6 +587,13 @@ header.scrolled{border-bottom:2px solid transparent;border-image:var(--tricolore
 
 /* ---------- MÓVIL (≤640px) ---------- */
 @media(max-width:640px){
+  /* La cabecera no cabía: logo(128) + tel(50) + botón(182) + menú(44) = 403px
+     en 331px disponibles. La hamburguesa se salía de la pantalla.
+     La barra fija inferior ya ofrece "Reservar Mesa" y llamar, así que
+     aquí sobran ambos y la cabecera queda limpia: logo + menú. */
+  .tel-link{display:none}
+  .nav-actions .btn-primary{display:none}
+  .nav{gap:.75rem}
   /* Fila del menú reordenada: nombre y precio arriba, descripción
      debajo a ancho completo. Se acabó el nombre en 122px. */
   .menu-item{flex-wrap:wrap;align-items:baseline;gap:.2rem .8rem;padding:1.15rem 0}
