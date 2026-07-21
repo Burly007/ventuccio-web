@@ -260,6 +260,12 @@ function renderMenu(){
     tab.classList.add('active');
     tab.setAttribute('aria-selected','true');
     $(`.menu-panel[data-panel="${tab.dataset.cat}"]`).classList.add('active');
+    // En móvil las pestañas van en tira deslizable: la activa se centra
+    // para que nunca quede a medias fuera de pantalla.
+    const tira = tab.parentElement;
+    if(tira.scrollWidth > tira.clientWidth){
+      tab.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    }
   }));
 }
 

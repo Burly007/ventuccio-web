@@ -628,6 +628,66 @@ body{overflow-x:hidden;width:100%;max-width:100%;position:relative}
   .testi-card{flex:0 0 min(360px,88vw);padding:1.8rem 1.5rem}
 }
 
+/* El botón de envío quedaba pegado al último campo (0px de separación).
+   Se aplica en todos los tamaños, no solo en móvil. */
+#resForm .btn-block,#contForm .btn-block{margin-top:1.7rem}
+
+/* ---------- CORRECCIONES DE SOLAPE Y PULIDO TÁCTIL ---------- */
+@media(max-width:900px){
+  /* El WhatsApp se montaba sobre la barra fija (6px). Ahora ambos
+     flotantes se apilan por encima de ella con holgura. */
+  .fab-wa{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+  .fab-top{bottom:calc(164px + env(safe-area-inset-bottom,0px))}
+}
+
+@media(max-width:640px){
+  /* "Abierto ahora" y el indicador "Descubre" se pisaban 19px.
+     En táctil el indicador sobra: nadie necesita que le digan que
+     puede deslizar, y libera altura en el hero. */
+  .scroll-ind{display:none}
+
+  /* iOS amplía la página al enfocar un campo de menos de 16px.
+     Con 16px exactos el zoom no se dispara. */
+  .field input,.field select,.field textarea,.news-form input{font-size:16px}
+
+  /* Pulido táctil: sin destello gris al tocar (el foco sigue visible)
+     y desplazamiento con inercia en el carrusel. */
+  a,button,.btn,.menu-tab,.pb-tipo,.fav-btn{-webkit-tap-highlight-color:transparent}
+  .testi-track{-webkit-overflow-scrolling:touch;scroll-padding-inline:1.4rem}
+
+  /* Evita que iOS agrande el texto al girar el móvil */
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+}
+
+/* ---------- PULIDO TÁCTIL: respuesta al pulsar ----------
+   En un móvil no existe :hover, así que sin :active los botones no
+   devuelven ninguna señal al tocarlos y la web se siente "muerta".
+   hover:none aísla los dispositivos táctiles sin tocar el escritorio. */
+@media(hover:none){
+  .btn:active,.menu-tab:active,.pb-tipo:active,.loc-tabs button:active,
+  .loc-switch button:active,.testi-nav button:active,.acc-head:active{
+    transform:scale(.97);transition-duration:.08s}
+  .fav-btn:active{transform:scale(.9)}
+  /* En táctil el :hover se queda "pegado" tras el toque: se neutraliza */
+  .btn:hover,.valor-card:hover,.dish-card:hover,.loc-card:hover,.res-phones a:hover{transform:none}
+  .dish-card:hover .dish-img img,.loc-card:hover .loc-photo img{transform:none}
+}
+
+/* ---------- MÓVIL: pestañas del menú en tira deslizable ----------
+   8 categorías en 3 filas ocupaban 151px de alto. En una sola fila
+   deslizable se recuperan ~100px y se gana el patrón habitual en móvil. */
+@media(max-width:640px){
+  .menu-tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;
+    scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+    margin-inline:-1.4rem;padding:.2rem 1.4rem .6rem;scrollbar-width:none}
+  .menu-tabs::-webkit-scrollbar{display:none}
+  .menu-tab{flex:0 0 auto;scroll-snap-align:start}
+
+  /* Teléfonos y email del footer: son los enlaces que más se pulsan
+     desde el móvil y medían 18px de alto. */
+  .foot-col .frow a{display:inline-block;padding:.25rem 0;min-height:24px}
+}
+
 /* ---------- MÓVIL PEQUEÑO (≤380px) ---------- */
 @media(max-width:380px){
   .container,.res-wrap{padding-left:1.15rem;padding-right:1.15rem}
