@@ -170,15 +170,15 @@ const MENU = {
 
 /* ---------- TESTIMONIOS (reseñas reales de Google) ---------- */
 const TESTIMONIALS = [
-  {name:'Daniel CR', meta:'Local Guide · 106 reseñas', when:'Hace 8 meses', stars:5,
+  {name:'Daniel C.', meta:'Local Guide · 106 reseñas', when:'Hace 8 meses', stars:5,
    txt:'Fuimos a comer al restaurante Ventuccio en Marbella y salimos encantados. Desde el primer momento la atención fue de diez, el camarero muy amable y atento; nos recomendó varias salsas para acompañar la pasta y acertó de pleno.'},
-  {name:'Daniel Sánchez de León', meta:'Local Guide · 31 reseñas', when:'Hace 3 años', stars:5,
+  {name:'Daniel S.', meta:'Local Guide · 31 reseñas', when:'Hace 3 años', stars:5,
    txt:'Sin lugar a dudas, actualmente el mejor italiano de Marbella. Materia prima y precio excelente. Tamaños de los platos, grandes. Hemos ido en familia 2 veces en 4 días y el personal nos ha tratado de lujo.'},
   {name:'Alpalo', meta:'Local Guide · 130 reseñas', when:'Hace 5 meses', stars:5,
    txt:'Servicio súper rápido, la comida espectacular y en grandes cantidades, tanto de la pizza como de la pasta. La atención cordial y amable. Repetiré sin duda.'},
-  {name:'Manuela Galván', meta:'Local Guide · 17 reseñas', when:'Hace 10 meses', stars:5,
+  {name:'Manuela G.', meta:'Local Guide · 17 reseñas', when:'Hace 10 meses', stars:5,
    txt:'Fuimos con amigos en busca de unas buenas pastas y la experiencia superó todas nuestras expectativas. Las porciones son abundantes y los sabores realmente deliciosos.'},
-  {name:'Jesús García', meta:'Local Guide · 80 reseñas', when:'Hace 5 años', stars:5,
+  {name:'Jesús G.', meta:'Local Guide · 80 reseñas', when:'Hace 5 años', stars:5,
    txt:'Sin duda, una de las mejores pizzerías de Málaga. Buen precio, buena calidad de los productos y lo que más llama la atención es la gran cantidad de comida que sirven.'},
 ];
 
@@ -445,7 +445,10 @@ function setupReservaForm(){
     const nombre = $('#nombre').value.trim();
     const ciudad = $('#ubicacion').value;
     form.style.display='none';
-    $('#successMsg').textContent = `${nombre}, te confirmamos tu mesa en ${ciudad} por teléfono en menos de 1 hora. ¡Grazie!`;
+    // El texto en producción sería solo la primera frase. La coletilla de
+    // demo evita que alguien crea que tiene mesa reservada de verdad.
+    $('#successMsg').innerHTML = `${nombre}, te confirmamos tu mesa en ${ciudad} por teléfono en menos de 1 hora. ¡Grazie!`
+      + `<br><small style="display:block;margin-top:.7rem;color:#8a8178">Demo: esta solicitud no se ha enviado a ningún sitio.</small>`;
     $('#resSuccess').style.display='block';
   });
   form.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',()=>el.closest('.field').classList.remove('invalid')));
